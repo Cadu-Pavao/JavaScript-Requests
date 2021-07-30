@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    background-color: #24242D;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    transform-style: preserve-3d;
+}
+
+.container .box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: #484959;
+    border-radius: 20px;
+    /*transition: 0.5s;*/
+    transform-style: preserve-3d;
+}
+
+
+.container .box::after{
+    content:'POKE';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 4.5em;
+    font-weight: 900;
+    color: #ffffff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container .box::before{
+    content:'BOOST';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 4.5em;
+    font-weight: 900;
+    color: #ffffff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .box:hover::before,
+.container .box:hover::after
+{
+    opacity: 0.06;
+}
+
+.container .box .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    font-weight: 700;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+.container .box:hover .name {
+    top:40px;
+    opacity: 1;
+}
+
+.container .box .edit{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #24242D;
+    background: #ffffff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Lato'!important;
+    font-weight: 500;
+    opacity: 0;
+    z-index: 10;
+}
+
+.container .box:hover .edit {
+    bottom:30px;
+    opacity: 1;
+}
+
+.container .box .circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: #161623;
+    transform-style: preserve-3d;
+    z-index: 10;
+    opacity: 1;
+    transform: translate3d(-50%,-50%,50px);
+}
+
+
+.container .box .deckbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    transition: 0.5s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px);
+}
+
+.container .box:hover .deckbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    transition: 0.5s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px) rotate(-15deg) scale(110%);
+}
+
